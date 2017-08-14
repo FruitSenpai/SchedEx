@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,
+	urlcolor=blue,
+}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+\title{Initial Documentation}
+\date{}
+\maketitle
+
+\section{Project Details}
+
+\textbf{System name: SchedEx} \\
+The system is used to schedule exams which is the motive behind the name. The scheduling includes the allocation of venues, date and time for university courses. 
+
+\textbf{Github repository: \url{https://github.com/FruitSenpai/SchedEx}} \\
+The repository is situated at the link above and will contain the system. There will be six branches on this repository, namely, documentation, master (the main project branch where the final build of the system will be located), followed by a branch for each team member (Harvey, Jason, Uvir and Zaeem) to facilitate ease of work on individual components.
+
+\section{Project Description}
+
+\subsection{Front-end}
+
+Responsible members
+\begin{enumerate}[i., nosep]
+	\item Harvey Muyangayanga
+	\item Zaeem Nalla
+\end{enumerate}
+
+Features
+\begin{enumerate}[i., nosep]
+
+	\item Lecturer view
+		\begin{enumerate}[-, nosep]
+			\item View personalised exam schedule
+			{\setlength\itemindent{-10pt} \item[] If a lecturer is a course coordinator too, they can:}
+			\item Schedule exam
+			\item Edit personal details (e.g. courses coordinated)
+		\end{enumerate}
+		
+	\item Student view
+		\begin{enumerate}[-, nosep]
+			\item View personalised exam schedule
+		\end{enumerate}
+	
+\end{enumerate}
+
+\subsection{Back-end}
+
+Responsible members
+\begin{enumerate}[i., nosep]
+	\item Uvir Bhagirathi
+	\item Jason Parry
+\end{enumerate}
+
+Features
+\begin{enumerate}[i., nosep]
+
+	\item Database
+		\begin{enumerate}[-, nosep]
+			\item Student details
+			\item Course details
+			\item Lecturer details
+			\item Venue details
+		\end{enumerate}
+	
+\end{enumerate}
+
+\subsection{Input}
+
+\begin{enumerate}[i., leftmargin=*]
+	\item A tentative  date  and  time  slot  in  which  the course coordinator would like  the  examination  to  be  taken - there is no guarantee that the date and time will definitely be assigned.
+	\item The class size (number of students registered in the course).
+	\item The current venue where the normal lectures are held for the class.
+	\item The main buildings where the faculties, that the classes belong, are located.
+\end{enumerate}
+
+\subsection{Output}
+
+\begin{enumerate}[i., leftmargin=*]
+	\item A calendar format with each course-exam-venue combination entered in its correct position 
+	\item A list of clashes - where the system was unable to place any courses on separate days or in separate venues due to the unavailability of such days or venues - if there are any
+\end{enumerate}
+
+\subsection{Optional Features}
+
+The following features are added as need be and time-permitting based on the completion of the base features in the above mentioned sections.
+
+\begin{enumerate}[i., leftmargin=*]
+	\item Google Maps Navigation to the exam venue
+	\item Exam added to the students' Google calendar
+	\item Request exam schedule change
+	\item Webviewer app
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
