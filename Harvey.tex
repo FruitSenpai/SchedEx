@@ -1,0 +1,82 @@
+\author{\huge Harvey I. Muyangayanga - 941446}
+\documentclass{article}
+\usepackage[a4paper, margin=0.75in, total={6in, 10in}]{geometry}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=blue,
+	urlcolor=blue,
+}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\begin{document}
+\section{Product Description}
+
+The SchedEx examination scheduling system is designed to schedule examinations for various college/university courses in various venues and time slots without clashes (if possible) whilst taking certain optimisations into account.
+
+\subsection{User characteristics}
+
+The following text mentions the purpose of the system for each type of user that's identified to interact with the system:
+
+\textbf{Student} \\
+The system creates a clash-free timetable (if possible) and allows the student to view the full timetable as well as a personalised calendar version. If the system is unable to create a clash-free timetable for the student, he/she is notified and is able to see the relevant clash(es).
+
+\textbf{Lecturer} \\
+The system creates a clash-free timetable (if possible) and allows the lecturer to view the full timetable as well as a personalised calendar version. If the system is unable to create a clash-free timetable for the lecturer (regarding the courses he/she lectures), he/she is notified and is able to see the relevant clash(es).
+
+\textbf{Course coordinator} \\
+The system allows the course coordinator to enter a preference for when and where they wish their exam to be scheduled. The system creates a clash-free timetable (if possible), taking these preferences into account and allows the course coordinator to view the finalised timetable as well as a report on clashes if any are present.
+
+\textbf{Administrator} \\
+The system allows the administrator to generate the provisional and final timetable on demand, let's them view the timetable and gives them the ability to edit or create course preference (for the course's exam) on behalf of a lecturer.
+
+\section{Formal Requirements Definition}
+
+\subsection{Requirements}
+
+The various tables below will list and describe the requirements as understood by Andromeda. Each table will list various requirements (grouped by category), each followed by columns that classify the requirement as either Functional (\textbf{F} - core functionality that is integral to the system) or Non-functional (\textbf{NF} - the methods in which the core functionality will be delivered) as well as either Mandatory (\textbf{M} - requirements key to project success) or Optional (\textbf{O} - requirements that are not necessarily key to a successful project but may improve on or add to the final product) – in the case of functional requirements.
+
+%Interface
+\begin{center}
+\begin{tabular}{|m{1cm}|m{10cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+\hline
+ & \textbf{Interface} & \textbf{F} & \textbf{NF} & \textbf{M} & \textbf{O} \\
+\hline
+1. & {Provide a graphics intensive interface (GUI)} & & X & X & \\
+\hline
+2. & {The interface should be intuitive which will facilitate ease-of-use} & & X & X & \\
+
+\hline
+\end{tabular}
+\end{center}
+
+%Functional Capabilities
+\begin{center}
+\begin{tabular}{|m{1cm}|m{10cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+\hline
+ & \textbf{Functional Capabilities} & \textbf{F} & \textbf{NF} & \textbf{M} & \textbf{O} \\
+\hline
+1. & {Enable the creation of a clash-free (if possible) examination timetable} & X & & X & \\
+\hline
+2. & {Allow a student to view their examination timetable} & X & & X & \\
+\hline
+3. & {Enable a course co-ordinator to enter preferences for their course examination} & X & & X & \\
+\hline
+4. & {Allow a lecturer to view the examination timetable for the courses associated with them} & X & & X & \\
+\hline
+5. & {Allow any user to view the whole examination timetable} & X & & X & \\
+\hline
+6. & {Allow users to view a clash report if any are present after timetable creation} & X & & X & \\
+\hline
+7. & {Create Google Calendar events to enable users to view the personalised timetables (mentioned above)} & X & & X & \\
+\hline
+\end{tabular}
+\end{center}
+\end{document}
