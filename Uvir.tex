@@ -1,0 +1,98 @@
+\author{\huge Uvir Bhagirathi - 1141886}
+\documentclass{article}
+\usepackage[a4paper, margin=0.75in, total={6in, 10in}]{geometry}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=blue,
+	urlcolor=blue,
+}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\begin{document}
+\section{Use Cases}
+
+\subsection{Use Case Set}
+
+The list below represents the project Use Case Set identified for the system. The Use Cases are grouped by the business features that they are related to (core, maintenance, reporting and archiving) because this will help with administration purposes. For example, if a new use case has to be added due to system improvements or changes then it will be easier to see where it fits in.
+
+\textbf{Core business-related use cases:}
+\begin{enumerate}[nosep]
+\item Create Timetable
+\item Create Course Preference
+\item Read Lecturer Timetable
+\item Read Student Timetable 
+\item Read Timetable
+\end{enumerate}
+
+\textbf{Maintenance-related use cases:}
+\begin{enumerate}[resume, nosep]
+\item Update Timetable
+\item Update Course Preference
+\end{enumerate}
+
+\textbf{Reporting-related use cases:}
+\begin{enumerate}[resume, nosep]
+\item Create Clash Report
+\end{enumerate}
+
+\textbf{Archiving-related use cases:}
+\begin{enumerate}[resume, nosep]
+\item Archive Timetable
+\end{enumerate}
+
+Actors identified that will link to the Use Case Set include: Student, Lecturer, Course coordinator and Administrator
+
+
+\subsection{Use Case Description}
+
+\begin{enumerate}
+\setlength\itemsep{1em}
+
+\item \textbf{Create Timetable} \\
+\textbf{Basic Flow}: The administrator clicks the “Generate Timetable” button. The system utilises our scheduling algorithm to match courses and venues with non-conflicting examination slots. The system stores the generated timetable. Thereafter, the system proceeds to create a personalised timetable for each student by creating entries in the respective student's Google Calendar (linked to their student email account). \\
+\textbf{Alternate Flow}: If the algorithm is unable to create a clash-free timetable, the best possible timetable is created, a clash report is logged in the database and the administrators and affected students receive an email containing a clash report.
+
+\item \textbf{Create Course Preference} \\
+\textbf{Basic Flow}: The course coordinator clicks the “Create Preference” button. The system receives and stores input from the course coordinator on date, time, class size, lecture venue, faculty building.
+
+\item \textbf{Read Lecturer Timetable} \\
+\textbf{Basic Flow}: The lecturer’s personalised timetable is retrieved from his/her exam related events that were added to his/her Google calendar (associated with his/her university account) and displayed. Navigation to the exam venue for a selected course is displayed beneath. \\
+\textbf{Alternate Flow}: If the exam timetable (provisional or final) hasn’t been created yet then a personalised timetable will be irrelevant and text notifying the lecturer of this will be displayed instead.
+
+\item \textbf{Read Student Timetable} \\
+\textbf{Basic Flow}: The student’s personalised timetable is retrieved from his/her exam related events that were added to his/her Google calendar (associated with his/her university account) and displayed. Navigation to the exam venue for a selected course is displayed beneath. \\
+\textbf{Alternate Flow}: If the exam timetable (provisional or final) hasn’t been created yet then a personalised timetable will be irrelevant and text notifying the student of this will be displayed instead.
+
+\item \textbf{Read Timetable} \\
+\textbf{Basic Flow}: The administrator logs in or the student, lecturer and course coordinator requests to view the full timetable. The stored timetable in the database is then displayed in a friendly format (list or a calendar). Navigation to the exam venue for a selected course is displayed beneath. \\
+\textbf{Alternate Flow}: If the exam timetable (provisional or final) hasn’t been created yet then a personalised timetable will be irrelevant and text notifying the admin, student, lecturer or coordinator of this will be displayed instead.
+
+\item \textbf{Update Timetable} \\
+\textbf{Basic Flow}: When a new Course Preference is created the Update Timetable use case is invoked for the algorithm to take into account the new course preference. 
+
+\item \textbf{Update Course Preference} \\
+\textbf{Basic Flow}: The course coordinator or admin clicks the “Update Preference” button. The system receives, searches and then updates the relevant course preference. \\
+\textbf{Alternate Flow}: If the course coordinator or admin tries to update the course preference of a course that doesn’t have any preferences set, the Create Course Preference use case is invoked.
+
+\item \textbf{Create Clash Report} \\
+\textbf{Basic Flow}: The administrator clicks the “Generate Timetable” button which creates the timetable. A report of clashes is then generated and displayed to the administrator as well as emailed to the students and lecturers associated with the courses. \\
+\textbf{Alternate Flow}: If there are no clashes one the timetable has been created, the administrator is informed of this through the system.
+
+\item \textbf{Archive Timetable} \\
+\textbf{Basic Flow}: The admin clicks the “Generate Timetable” button. The Create Timetable use case is then invoked. The timetable is then archived by storing the dates, times and venues for each course in the database.
+
+\end{enumerate}
+
+\end{document}
+
+\grid
+\grid
