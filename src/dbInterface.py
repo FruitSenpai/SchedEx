@@ -18,6 +18,8 @@ class dbInterface:
 	def getDates(self):
 		self.__cursor.execute('SELECT * FROM Staff;')
 		data = self.__cursor.fetchone()
-		print("SQL Version " + str(data[1]))
+		data = self.__cursor.fetchone()
+		print("SQL Version " + str(data[2]))
+			
 		
 main()		
