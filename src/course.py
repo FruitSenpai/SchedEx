@@ -1,4 +1,4 @@
 class Course:
-	def __init__(self):
-		self.__code
-		self.__size
+	def __init__(self, code, size):
+		self.__code = code
+		self.__size = size
