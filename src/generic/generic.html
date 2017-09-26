@@ -25,10 +25,12 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
     <header class="mdl-layout__header">
+
         <!-- Header -->
         <div>
+
             <!-- Title -->
-            <h3 class="title" style="font-family: 'Pacifico', cursive;">SchedEx</h3>
+            <h3 class="center_align" style="font-family: 'Pacifico', cursive;">SchedEx</h3>
 
             <!-- Search -->
             <form id="search_bar" class="search" action="#">
@@ -49,6 +51,7 @@
             <i id="logout" class="logout material-icons">exit_to_app</i>
             <!-- Logout tooltip -->
             <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="logout">Logout</div>
+
         </div>
 
         <!-- Tabs -->
@@ -56,23 +59,78 @@
             <a href="#scroll-tab-1" class="mdl-layout__tab is-active">personalised</a>
             <a href="#scroll-tab-2" class="mdl-layout__tab">full</a>
         </div>
+
     </header>
 
     <!-- Tabs content -->
-    <main class="mdl-layout__content">
+    <main class="center_align mdl-layout__content">
+
+        <!-- Personalised timetable -->
         <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
             <div class="page-content">
+
                 <!-- Your content goes here -->
+
+                <!-- Exams -->
+                <h4>Exams</h4>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Code</th>
+                        <th class="mdl-data-table__cell--non-numeric">Title</th>
+                        <th class="mdl-data-table__cell--non-numeric">Date</th>
+                        <th class="mdl-data-table__cell--non-numeric">Venue</th>
+                        <th class="mdl-data-table__cell--non-numeric">Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3002</td>
+                        <td class="mdl-data-table__cell--non-numeric">Software Engineering</td>
+                        <td class="mdl-data-table__cell--non-numeric">9/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">Old Mutual Sports Hall</td>
+                        <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!-- Calendar -->
+                <h4>Calendar</h4>
+
+                <!-- Navigation -->
+                <h4>Navigation</h4>
+
             </div>
         </section>
+
+        <!-- Full timetable -->
         <section class="mdl-layout__tab-panel" id="scroll-tab-2">
             <div class="page-content">
-                <!-- Your content goes here -->
+                <h4>Exams</h4>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Code</th>
+                        <th class="mdl-data-table__cell--non-numeric">Title</th>
+                        <th class="mdl-data-table__cell--non-numeric">Date</th>
+                        <th class="mdl-data-table__cell--non-numeric">Venue</th>
+                        <th class="mdl-data-table__cell--non-numeric">Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3002</td>
+                        <td class="mdl-data-table__cell--non-numeric">Software Engineering</td>
+                        <td class="mdl-data-table__cell--non-numeric">9/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">Old Mutual Sports Hall</td>
+                        <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
-    </main>
 
-    <!-- Logout -->
+    </main>
 
 </div>
 
