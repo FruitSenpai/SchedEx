@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SchedEx</title>
+
+    <!-- jQuery -->
+    <script src="../../libs/jquery.min.js"></script>
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="../../libs/material-icons/material-icons.css">
+    <!-- Material Design components -->
+    <link rel="stylesheet" href="../../libs/material-design/material.min.css">
+    <script src="../../libs/material-design/material.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="coordinator.css">
+    <!-- JS -->
+    <script src="coordinator.js"></script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <header class="mdl-layout__header">
+
+        <!-- Header -->
+        <div>
+
+            <!-- Title -->
+            <h3 class="center_align" style="font-family: 'Pacifico', cursive;">SchedEx</h3>
+
+            <!-- Search -->
+            <form id="search_bar" class="search" action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="sample6">
+                        <label class="mdl-textfield__label mdl-color--pink-500" for="sample-expandable">Expandable Input</label>
+                    </div>
+                </div>
+            </form>
+            <!-- Search tooltip -->
+            <div id="search_tooltip" class="mdl-tooltip mdl-tooltip--right" data-mdl-for="search_bar">Course code</div>
+
+            <!-- Logout -->
+            <i id="logout" class="logout material-icons">exit_to_app</i>
+            <!-- Logout tooltip -->
+            <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="logout">Logout</div>
+
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">personalised</a>
+            <a href="#scroll-tab-2" class="mdl-layout__tab">full</a>
+        </div>
+
+    </header>
+
+    <!-- Tabs content -->
+    <main class="center_align mdl-layout__content">
+
+        <!-- Personalised timetable -->
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+            <div class="page-content">
+
+                <!-- Your content goes here -->
+
+                <!-- Exams -->
+                <h4>Exams</h4>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Code</th>
+                        <th class="mdl-data-table__cell--non-numeric">Title</th>
+                        <th class="mdl-data-table__cell--non-numeric">Date</th>
+                        <th class="mdl-data-table__cell--non-numeric">Venue</th>
+                        <th class="mdl-data-table__cell--non-numeric">Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3002</td>
+                        <td class="mdl-data-table__cell--non-numeric">Software Engineering</td>
+                        <td class="mdl-data-table__cell--non-numeric">9/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">Old Mutual Sports Hall</td>
+                        <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!-- Calendar -->
+                <h4>Calendar</h4>
+
+                <!-- Navigation -->
+                <h4>Navigation</h4>
+
+            </div>
+        </section>
+
+        <!-- Full timetable -->
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+            <div class="page-content">
+                <h4>Exams</h4>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Code</th>
+                        <th class="mdl-data-table__cell--non-numeric">Title</th>
+                        <th class="mdl-data-table__cell--non-numeric">Date</th>
+                        <th class="mdl-data-table__cell--non-numeric">Venue</th>
+                        <th class="mdl-data-table__cell--non-numeric">Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3002</td>
+                        <td class="mdl-data-table__cell--non-numeric">Software Engineering</td>
+                        <td class="mdl-data-table__cell--non-numeric">9/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">Old Mutual Sports Hall</td>
+                        <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
