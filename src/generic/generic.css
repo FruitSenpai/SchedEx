@@ -32,8 +32,3 @@ table {
     left: 50%;
     transform: translate(-50%);
 }
-
-.transparent {
-    filter: blur(20px);
-    opacity: 0.4;
-}
