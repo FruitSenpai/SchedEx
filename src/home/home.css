@@ -3,37 +3,44 @@
     src: url('../../fonts/Pacifico-Regular.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Roboto-Regular';
-    src: url('../../fonts/Roboto-Regular.ttf') format('truetype');
-}
-
-h1 {
-    top: 20%;
-}
-
-p {
-    top: 40%
-}
-
-#header {
+.header_cont {
+    color: white;
     width: 100%;
-    height: 450px;
+    height: 50vh;
     background: url('../../images/background.jpg') center / cover;
 }
 
-#login {
-    top: 40%;
+h1 { top: 10vh; display: block;}
+
+p { top: 20vh; display: block;;}
+
+.login_cont {
+    overflow: visible;
+    display: block;
     width: 35vw;
-    height: 40vh;
+    height: 30vh;
+}
+
+h4 {
+    top: 5%;
+    color: deeppink;
+}
+
+.login_email { top: 37%; width: 90%; text-align: center;}
+
+.login_password { top:65%; width: 90%; text-align: center; }
+
+#login_button { top: 100% }
+#login_button:hover { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+img {
+    bottom: 0;
+    width: 3vw;
+    height: 3vh;
 }
 
 .center {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.white {
-    color: white;
 }
