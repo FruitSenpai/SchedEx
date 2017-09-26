@@ -3,25 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SchedEx</title>
-    <link rel="stylesheet" href="home.css">
 
+    <!-- jQuery -->
+    <script src="../../libs/jquery.min.js"></script>
     <!-- Material Design icons -->
     <link rel="stylesheet" href="../../libs/material-icons/material-icons.css">
     <!-- Material Design components -->
     <link rel="stylesheet" href="../../libs/material-design/material.min.css">
     <script src="../../libs/material-design/material.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="home.css">
+    <!-- JS -->
+    <script src="home.js"></script>
 </head>
 
 <body>
 
-<div id="header" class="demo-card-image mdl-card mdl-shadow--2dp">
-    <h1 class="center white" style="font-family: 'Pacifico', cursive;">SchedEx</h1>
-    <p class="center white" style="font-family: 'Roboto-Regular', cursive">The portal to an exam scheduling system</p>
+<!-- Header -->
+<div class="header_cont demo-card-image mdl-card mdl-shadow--2dp">
+    <h1 class="center" style="font-family: 'Pacifico', cursive;">SchedEx</h1>
+    <p class="center">An optimal exam scheduling system</p>
 </div>
 
-<div id="login" class="demo-card-image mdl-card mdl-shadow--2dp center">
+<!-- Login -->
+<div class="login_cont center mdl-card mdl-shadow--2dp">
+    <h4 class="center">Login</h4>
+    <!-- Email -->
+    <form class="login_email center" action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="login_email" class="mdl-textfield__input" type="text">
+            <label class="mdl-textfield__label" for="login_email">Email</label>
+        </div>
+    </form>
+    <!-- Password -->
+    <form class="login_password center" action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="login_password" class="mdl-textfield__input" type="password">
+            <label class="mdl-textfield__label" for="login_password">Password</label>
+        </div>
+    </form>
+    <!-- Button -->
+    <button id="login_button" onclick="login()" class="center mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">arrow_forward</i>
+    </button>
 </div>
+
+<a href="https://github.com/FruitSenpai/SchedEx">
+    <img src="../../images/github.svg" class="center">
+</a>
 
 </body>
 
