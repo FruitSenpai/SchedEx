@@ -3,7 +3,7 @@
     src: url('../../fonts/Pacifico-Regular.ttf') format('truetype');
 }
 
-.title {
+.center_align {
     text-align: center;
 }
 
@@ -22,6 +22,15 @@
 .tabs {
     position: absolute;
     justify-content: center;
+}
+
+h4 {
+    color: deeppink;
+}
+
+table {
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .transparent {
