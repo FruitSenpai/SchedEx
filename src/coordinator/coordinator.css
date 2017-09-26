@@ -33,7 +33,30 @@ table {
     transform: translate(-50%);
 }
 
-.transparent {
-    filter: blur(20px);
-    opacity: 0.4;
+p {
+    color: #0d47a1;
 }
+
+.mdl-card {
+    overflow: visible;
+    margin-top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 40%;
+    height: 40vh;
+}
+
+.label {
+    text-align: left;
+    position: absolute;
+    left: 15%;
+    font-weight: bold;
+}
+
+.button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 100%;
+}
+.button:hover { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }

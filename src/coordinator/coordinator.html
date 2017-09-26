@@ -48,7 +48,9 @@
             <div id="search_tooltip" class="mdl-tooltip mdl-tooltip--right" data-mdl-for="search_bar">Course code</div>
 
             <!-- Logout -->
-            <i id="logout" class="logout material-icons">exit_to_app</i>
+            <button id="logout" class="logout mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">exit_to_app</i>
+            </button>
             <!-- Logout tooltip -->
             <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="logout">Logout</div>
 
@@ -56,8 +58,9 @@
 
         <!-- Tabs -->
         <div class="tabs mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">personalised</a>
-            <a href="#scroll-tab-2" class="mdl-layout__tab">full</a>
+            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">course</a>
+            <a href="#scroll-tab-2" class="mdl-layout__tab">personalised</a>
+            <a href="#scroll-tab-3" class="mdl-layout__tab">full</a>
         </div>
 
     </header>
@@ -65,8 +68,51 @@
     <!-- Tabs content -->
     <main class="center_align mdl-layout__content">
 
-        <!-- Personalised timetable -->
+        <!-- Course -->
         <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+            <div class="page-content">
+
+                <h4>Preferences and details</h4>
+                <p>Enter the exam preferences and course details for a course which you are the coordinator of</p>
+                <div class="mdl-card mdl-shadow--2dp">
+
+                    <!-- Date -->
+                    <div>
+                        <label class="">Date</label>
+                    </div>
+
+                    <!-- Time -->
+                    <div>
+                        <label class="">Time</label>
+                    </div>
+
+                    <!-- Class Size -->
+                    <div>
+                        <label class="">Class Size</label>
+                    </div>
+
+                    <!-- Lecture Venue -->
+                    <div>
+                        <label class="">Lecture Venue</label>
+                    </div>
+
+                    <!-- Faculty Building -->
+                    <div>
+                        <label class="">Faculty Bulidng</label>
+                    </div>
+
+                    <!-- Button -->
+                    <button id="button" class="button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">done</i>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Personalised timetable -->
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
             <div class="page-content">
 
                 <!-- Your content goes here -->
@@ -104,7 +150,7 @@
         </section>
 
         <!-- Full timetable -->
-        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
             <div class="page-content">
                 <h4>Exams</h4>
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
