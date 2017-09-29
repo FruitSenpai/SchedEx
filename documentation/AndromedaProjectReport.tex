@@ -398,7 +398,7 @@ All users (actors) are able to invoke the Read Timetable use case which allows t
 The design is split up into three distinct sections, namely the Presentation, Business and Data Layers: 
 
 \subsubsection{Presentation Layer}
-The presentation layer involves the user interface of the application. It is the front end with which the user
+The presentation layer involves the user interface of the application which will run on the client side of the system. It is the front end with which the user
 interacts and all transfer of data between the application and the user occurs in this layer. [<x>]
 
 The User Interface is designed to be clean, informative and aesthetically pleasing. There is a logical flow
@@ -417,20 +417,37 @@ The Generic screen is designed for students and lecturers. The screen facilitate
 
 <insert Admin screenshot> 
 
-The Admin screen is designed for university administrators.
+The Admin screen is designed for university/college administrators. It enables the admin to generate a new timetable through provision of start date and end date fields for the exam period. Additionally, the screen provides the administrator with the option of viewing the generated timetable and editing it, should it prove necessary. 
 
 <insert Coordinator screenshot> 
 
-The Coordinator screen is designed for course so-ordinators.  
+The Coordinator screen is designed for course co-ordinators. The ability to add course preferences (such as the time, date and venue where they wish their exam to be scheduled) is provided by this part of the interface, along with the option to view the full timetable and a personalised timetable (based on the courses for which he/she is a co-ordinator).
+
+As can be seen from the above screen designs and their associated descriptions, the presentation layer of SchedEx follows a simple, clean methodology which facilitates ease-of-use whilst still providing all of the requested functional and non-functional capabilities of the system.
 
 \subsubsection{Business Layer}
-The business layer is where the functionality of the application is implemented. It acts as the middle-ground
-between the presentation and data layers – data is received, processed and sent to or from both the
-presentation and data layers.
+The business layer is where the functionality of the application is implemented and runs on the server side of the system. It acts as the middle-ground between the presentation and data layers – data is received, processed and sent to or from both the presentation and data layers.
+
+The system is designed with the important principles of user experience in mind including: ease-of-use, practicality and efficiency.
+
+The business layer is set to work as follows: data is received from the presentation layer indicating the specific function which the user is requesting. This data, along with the appropriate class and method are used to retrieve (from the data layer) or generate the requested data and process it as necessary before returning it to the presentation layer to be displayed to the user.
+
+Object orientation is to be used in the implementation of the business layer in order to create an accurate representation of the 'real-life' scenario. The exact details of this object oriented design may be found in the class diagram below (Section 3.3.4). Each of the relevant entities in the scenario are modelled as a class with variables and methods which enable them to perform their specific task.
+
+The design of the system ensures the various use cases may be executed intuitively. Each request made from the presentation layer is carried out in a well-defined manner using the aforementioned object oriented approach and returns the correct information to successfully complete the request.
+
+The business layer connects to the data layer through one of the classes. This class contains all of the methods necessary to retrieve any data which made be needed for the processing of requests. In this way, an instance of this class may be made and used wherever communication with the data layer is needed.
 
 \subsubsection{Data Layer}
-The data layer acts as the interface with external data storage systems. It allows data to be written and
+The data layer acts as the interface with external data storage systems and is stored on the server side of the system. It allows data to be written and
 retrieved to and from files and other external systems such as databases.
+
+When designing the data layer, it is important to consider, amongst other things, which attributes should be
+stored and the security this data requires. As per the assumptions made in the Requirements Specifications (Section 2.3.2), the system has access to the institution's data stores in order to obtain various student and course-relate data. In addition to this, the system requires its own data stores to act as persistent storage for various aspects of the exam scheduling system.
+
+With the above in mind, the data layer is to be implemented in the form of a database which will maintain all of the relevant attributes. The chosen type of database is relational due to the flexibility it provides, along with security and ease-of-access using SQL querying.
+
+The data layer interacts with the business layer using the intermediary class (as mentioned in the design of the business layer, above). The class makes use of custom SQL queries to retrieve the necessary data from the database tables. The design of the data layer allows this data to be pulled and used in an efficient manner.
 
 \subsubsection{Class Diagram}
 
@@ -443,9 +460,21 @@ methods. The class diagram also shows the relationships (association) between cl
 \centerline{\includegraphics[scale=0.65]{ClassDiagram}}
 Figure <x>: Final System Class Diagram
 
+The figure above represents the design of the system (specifically the business layer) and shows the various classes in the object oriented design.
+
+As can be seen, the dbInterface and Timetable classes make up the backbone of the system. The dbInterface class is used to connect to the database - the intermediary class discussed in the design of the business and data layers (Sections 3.3.2 and 3.3.3) - and creates Course (university courses), Venue (university venues) and Edge (combinations of dates and venues used in graph colouring) objects by pulling the relevant data from the database through an established connection. The Timetable class is the key component in the functioning of the back end. It uses an instance of the dbInterface class to retrieve the necessary data. Thereafter, this data is used to instantiate the graphColour class which takes in the courses and date-venue combinations and uses a custom graph colouring algorithm to create an optimal timetable (if possible). For each match between a course and date-venue, an instance of a Slot is created. The dbInterface class is then used again to store the slots in the database as a Timetable table which allows the presentation layer to display it and perform operations on it for all relevant users.
+
+The class diagram as presented above is the final output of the design process discussed above. The
+implementation of the system is drawn from the class diagram. The system depicted by the class diagram
+is discussed in section 4.
+
 \subsection{Pair I - Front End}
 
+The front end pair are responsible for the design of the presentation layer. This entails creating mock-ups (wireframes) of the relevant screens. Thereafter, the screens are turned into an actual interface design which includes all of the necessary components. Once the interface deign is in place, the logic to make it work and receive user requests is designed and checked to ensure it will successfully satisfy both the functional and non-functional requirements aspects relating to it. After all of the above work has been completed, the front end is designed and ready for the implementation phase of the project, discussed below.
+
 \subsection{Pair II - Back End}
+
+The back end pair are responsible for both the business and data layers of the SchedEx system. The business layer involves the creation of a class diagram - through the translation of requirements and use cases to a design that may be implemented in code - which provides a detailed description of the attributes and methods in each class of the object oriented solution. The data layer entails the consideration of various aspects (such as security, data types and querying) which leads to the selection of an appropriate solution and the creation of an entity relationship diagram which provides insight into the relational database, the various tables, attributes, primary and foreign keys and the relationships between each of the entities. After this above work has been accomplished, the back end is fully designed and ready for the implementation phase of the project, discussed below.
 
 \section{System Implementation}
 The implementation of the above design is split up into three distinct sections, namely the Presentation,
