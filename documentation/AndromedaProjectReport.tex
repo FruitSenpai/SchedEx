@@ -52,19 +52,41 @@ Back End & Jason Parry & 1046955\\
 \pagebreak
 
 \section{Introduction}
+This document contains information on SchedEx, an examination-venue scheduling software to be implemented into university/college institutions. This includes the requirements specification which is composed of the project scope, product description, formal requirements definition and use cases. The system design comprises the domain model, informal description, system use cases and system framework. The system implementation contains the dependencies, testing and pair work as well as the presentation, business and data layers.
 
 \subsection{Project Overview}
+A class-examination to venue scheduling system software is required to be implemented to aid university/college institutions.
 
 \subsection{Problem Statement}
+We want our examination Time-table scheduling software to allocate examinations to venues on the recommended date-time slot (if possible), maximising student-venue capacity and minimising examination clashes.
+
+Recommended date-time slots may be the same for different examinations. If this is ignored when generating the time-table then examination clashes can be made resulting in an unorganised timetable and overbooked venue.
+
+Separate venues will have to be allocated to clashing recommended date-time slots and should be ignored when it is not possible to assign that examination to the recommended date-time slot. We will use a graph colouring algorithm to minimise examination-venue clashes.
 
 \subsection{Project Objectives}
+The system will need to produce a clash free examination time-table, taking the following into consideration for each course:
+\begin{itemize}
+\item Recommended examination date-time slot
+\item Number of students registered
+\item Current venue where lectures take place
+\item Main buildings where the faculties of the courses are located
+\end{itemize}
 
 \subsection{Project Stakeholders}
+The following is a list of stakeholders:
+\begin{itemize}
+\item Students
+\item Lecturers
+\item Course Coordinators
+\item Administrators
+\item University Management
+\end{itemize}
 
 \section{Requirements Specification}
 \subsection{Project Scope}
 
-The project scope is based around implementing a software system to schedule class-examinations to examination venues. The system will take into consideration details such as class size, preferred examination date and time when scheduling the examination and venue. Once a examination timetable is generated students and lecturers will be provided with a personalised version of the timetable consisting of just the courses he/she is associated with. 
+The project scope is based around implementing a software system to schedule class-examination to examination venues. The system will take into consideration details such as class size, preferred examination date and time when scheduling the examination and venue. Once a examination timetable is generated students and lecturers will be provided with a personalised version of the timetable consisting of just the courses he/she is associated with. 
 
 The purpose of this project is to provide a robust examination scheduling software to be used by tertiary education facilities with minimum examination clashes. If an examination clash occurs then the relevant personnel will be notified and will be corrected manually.
 
@@ -214,6 +236,8 @@ The list below contains some functionalities that the system depends on:
 \item A valid course listing/database with related courses (i.e. courses that can be done simultaneously) clearly indicated - the number of clashes which the system should minimise and generation of a timetable is dependent on this.
 \item Internet connection - the system is based on a client-server architecture with the server being centralised and remote.
 \item Google Calendar API - if the API drastically changes, the system won't be able to add exam events for students, lecturers and course coordinators.
+\item Python networkx - this package is used to graph the required data to generate the examination-venue timetable.
+\item Python sqlite3 - this library is used to interact with the institution's database.
 \end{itemize}
 
 \subsubsection{Operating Environment}
@@ -336,6 +360,7 @@ The list below represents the final project Use Case Set identified from the Req
 \item Read Lecturer Timetable
 \item Read Student Timetable 
 \item Read Timetable
+\item Search Course
 \end{enumerate}
 
 \textbf{Maintenance-related use cases:}
@@ -363,16 +388,40 @@ The primary actors in this system are the Administrator, Course co-ordinator and
 
 The administrator may invoke the Create Timetable use case in order to generate a new timetable or the Update Timetable Use Case in order to update the timetable. Additionally, the administrator may invoke the Create Clash Report use case to generate a list of clashes (if any) and email the affected parties. Finally, the Archive Timetable may be invoked by the administrator in order to archive a previously-generated timetable.
 
+The course co-ordinator is able to invoke the Create Course Preference use case which allows him/her to enter the chosen preferences (date, time and venue) relating to one of their courses.
+
+Students and lecturers invoke the Read Student Timetable and Read Lecturer Timetable use cases respectively to view their personalised timetables based on the courses they take/lecture.
+
+All users (actors) are able to invoke the Read Timetable use case which allows them to view the full timetable (for the whole exam period) which has been generated. Additionally, all users may invoke the Search Course use case which enables them to see the exam details of the course which they have entered.
+
 \subsection{System Framework}
 The design is split up into three distinct sections, namely the Presentation, Business and Data Layers: 
 
 \subsubsection{Presentation Layer}
 The presentation layer involves the user interface of the application. It is the front end with which the user
-interacts and all transfer of data between the application and the user occurs in this layer. [5]
+interacts and all transfer of data between the application and the user occurs in this layer. [<x>]
 
 The User Interface is designed to be clean, informative and aesthetically pleasing. There is a logical flow
 between screens which ensures that the user always knows where they are currently in the execution of
 the program and where they can get to from that state.
+
+With the above in mind, the interface has four screens: Login, Generic (for students and lecturers), Admin and Coordinator.
+
+<insert Login screenshot> 
+
+The Login screen enables the user to securely login to the system and, after valid credentials have been entered and the login button is clicked,  displays the appropriate screen (Generic, Admin or Coordinator) based on the privilege level of the user - determined by role level in the data layer (Section 3.3.3) associated with the credentials entered.   
+
+<insert Generic screenshot> 
+
+The Generic screen is designed for students and lecturers. The screen facilitates the viewing of the various timetables (both the full timetable, as well as a personalised version). The screen also allows the user to search for a specific course and displays the exam details associated with it.
+
+<insert Admin screenshot> 
+
+The Admin screen is designed for university administrators.
+
+<insert Coordinator screenshot> 
+
+The Coordinator screen is designed for course so-ordinators.  
 
 \subsubsection{Business Layer}
 The business layer is where the functionality of the application is implemented. It acts as the middle-ground
@@ -388,7 +437,11 @@ retrieved to and from files and other external systems such as databases.
 In object-oriented programming the code is implemented as a set of classes. The final step in object-
 oriented design is to produce a class diagram, which is the detailed description of the code to be produced.
 The class diagram shows all of the classes in the application, including their associated attributes and
-methods. The class diagram also shows the relationships (inheritance and association) between classes.
+methods. The class diagram also shows the relationships (association) between classes.
+\bigskip
+
+\centerline{\includegraphics[scale=0.65]{ClassDiagram}}
+Figure <x>: Final System Class Diagram
 
 \subsection{Pair I - Front End}
 
@@ -417,6 +470,9 @@ Business and Data Layers.
 \subsection{Project Sprint Retrospective}
 
 \section{Conclusion}
+The above document details the 
+
+\bibliography{References}
 
 \appendix
 
