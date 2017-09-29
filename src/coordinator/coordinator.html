@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="../../libs/material-design/material.min.css">
     <script src="../../libs/material-design/material.min.js"></script>
 
+    <!-- Dropdown/Selectfield -->
+    <link rel="stylesheet" href="../../libs/material-selectfield/getmdl-select.min.css">
+    <script src="../../libs/material-selectfield/getmdl-select.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="coordinator.css">
     <!-- JS -->
@@ -40,7 +44,7 @@
                     </label>
                     <div class="mdl-textfield__expandable-holder">
                         <input class="mdl-textfield__input" type="text" id="sample6">
-                        <label class="mdl-textfield__label mdl-color--pink-500" for="sample-expandable">Expandable Input</label>
+                        <label class="mdl-textfield__label mdl-color--pink-500"></label>
                     </div>
                 </div>
             </form>
@@ -76,30 +80,65 @@
                 <p>Enter the exam preferences and course details for a course which you are the coordinator of</p>
                 <div class="mdl-card mdl-shadow--2dp">
 
+                    <!--- Course code -->
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                            <input class="mdl-textfield__input" type="text" id="code">
+                            <label for="code" class="mdl-textfield__label">Course Code</label>
+                            <ul for="code" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                <li class="mdl-menu__item">-</li>
+                                <li class="mdl-menu__item">COMS3002</li>
+                                <li class="mdl-menu__item">COMS3005</li>
+                            </ul>
+                        </div>
+                    </form>
+
                     <!-- Date -->
-                    <div>
-                        <label class="">Date</label>
-                    </div>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input id="date" class="mdl-textfield__input" type="text">
+                            <label class="mdl-textfield__label" for="date">Date (dd/mm/yyyy)</label>
+                        </div>
+                    </form>
 
                     <!-- Time -->
-                    <div>
-                        <label class="">Time</label>
-                    </div>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                            <input class="mdl-textfield__input" type="text" id="time">
+                            <label for="time" class="mdl-textfield__label">Time</label>
+                            <ul for="time" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                <li class="mdl-menu__item">-</li>
+                                <li class="mdl-menu__item">9:00</li>
+                                <li class="mdl-menu__item">13:00</li>
+                                <li class="mdl-menu__item">17:00</li>
+                            </ul>
+                        </div>
+                    </form>
 
                     <!-- Class Size -->
-                    <div>
-                        <label class="">Class Size</label>
-                    </div>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="size">
+                            <label class="mdl-textfield__label" for="size">Class Size</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                    </form>
 
                     <!-- Lecture Venue -->
-                    <div>
-                        <label class="">Lecture Venue</label>
-                    </div>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input id="venue" class="mdl-textfield__input" type="text">
+                            <label class="mdl-textfield__label" for="venue">Lecture Venue</label>
+                        </div>
+                    </form>
 
                     <!-- Faculty Building -->
-                    <div>
-                        <label class="">Faculty Bulidng</label>
-                    </div>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input id="building" class="mdl-textfield__input" type="text">
+                            <label class="mdl-textfield__label" for="building">Faculty Building</label>
+                        </div>
+                    </form>
 
                     <!-- Button -->
                     <button id="button" class="button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
@@ -108,14 +147,18 @@
 
                 </div>
 
+                <!-- Snackbar -->
+                <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+                    <div class="mdl-snackbar__text"></div>
+                    <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+
             </div>
         </section>
 
         <!-- Personalised timetable -->
         <section class="mdl-layout__tab-panel" id="scroll-tab-2">
             <div class="page-content">
-
-                <!-- Your content goes here -->
 
                 <!-- Exams -->
                 <h4>Exams</h4>
@@ -131,10 +174,10 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="mdl-data-table__cell--non-numeric">COMS3002</td>
-                        <td class="mdl-data-table__cell--non-numeric">Software Engineering</td>
-                        <td class="mdl-data-table__cell--non-numeric">9/11/2017</td>
-                        <td class="mdl-data-table__cell--non-numeric">Old Mutual Sports Hall</td>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3005</td>
+                        <td class="mdl-data-table__cell--non-numeric">Advanced Analysis of Algorithms</td>
+                        <td class="mdl-data-table__cell--non-numeric">13/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">FNBBA</td>
                         <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
                     </tr>
                     </tbody>
@@ -170,6 +213,20 @@
                         <td class="mdl-data-table__cell--non-numeric">9/11/2017</td>
                         <td class="mdl-data-table__cell--non-numeric">Old Mutual Sports Hall</td>
                         <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3005</td>
+                        <td class="mdl-data-table__cell--non-numeric">Advanced Analysis of Algorithms</td>
+                        <td class="mdl-data-table__cell--non-numeric">13/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">FNBBA</td>
+                        <td class="mdl-data-table__cell--non-numeric">14:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">COMS3008</td>
+                        <td class="mdl-data-table__cell--non-numeric">Parallel Computing</td>
+                        <td class="mdl-data-table__cell--non-numeric">17/11/2017</td>
+                        <td class="mdl-data-table__cell--non-numeric">MSL110</td>
+                        <td class="mdl-data-table__cell--non-numeric">9:00 - 12:00</td>
                     </tr>
                     </tbody>
                 </table>

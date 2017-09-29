@@ -39,11 +39,10 @@ p {
 
 .mdl-card {
     overflow: visible;
-    margin-top: 5%;
     left: 50%;
     transform: translate(-50%);
     width: 40%;
-    height: 40vh;
+    height: 55vh;
 }
 
 .label {
