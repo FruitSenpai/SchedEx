@@ -45,13 +45,6 @@ p {
     height: 60vh;
 }
 
-.label {
-    text-align: left;
-    position: absolute;
-    left: 15%;
-    font-weight: bold;
-}
-
 .button {
     position: absolute;
     left: 50%;
