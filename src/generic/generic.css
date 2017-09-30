@@ -32,3 +32,9 @@ table {
     left: 50%;
     transform: translate(-50%);
 }
+
+.map {
+    width: 80vw;
+    height: 65vh;
+    margin-bottom: 3%;
+}
