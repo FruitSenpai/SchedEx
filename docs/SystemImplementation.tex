@@ -1,0 +1,33 @@
+\section{System Implementation}
+
+The implementation of the above design is split up into three distinct sections, namely the Presentation, Business and Data Layers.
+
+\subsection{Presentation Layer}
+\subsection{Business Layer}
+\subsection{Data Layer}
+\subsection{Dependencies}
+
+\subsection{Pair I - Front End}
+\subsection{Pair II - Back End}
+
+\subsection{Testing}
+
+Testing is a critical part of the development of any system as it ensures the functional and non-functional requirements of the project are met and that the system functions as intended without any serious issues or bugs. Both black box and white box testing are employed in this system as detailed below.
+
+\subsubsection{Server}
+
+Verification was done to ensure the various back end components such as the database connectivity, data retrieval, Google calendar events and timetable generation work correctly.
+
+Unit tests were conducted to ensure that, given certain parameter values, the algorithm produces the correct results. These algorithm was first traced by hand and then the unit tests were used to assert whether the hand calculations and the output of the functions do match.
+
+The output of the Google calendar event creation was also monitored by observing whether an event was actually created given a valid Google account.
+
+Both of the above tests successfully completed and verified that the server-side works correctly.
+
+\subsubsection{Interface}
+
+Unit tests are used to test each of the interface views i.e. generic (used for students and lecturers since they share mutual features), coordinator and administrator. This is done by entering pre-defined login credentials for each type of user on the login screen and observing the resulting interface transition. This ensures the relevant interface view and related components are created based on the type of user so that the user is given the system features that they require.
+
+The interface view is then tested by a user. The user attempts to use the interface to navigate between the various screens. The user clicks on various places on the screens to ensure that no unintended behaviour occurs and then clicks on an available button to test that this is the only place where a change due to a mouse click occurs.
+
+The above tests are completed successfully and determine that the interface works correctly according to the design.
