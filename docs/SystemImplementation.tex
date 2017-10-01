@@ -14,7 +14,12 @@ The coordinator screen is the same as above with the extension of a course tab w
 The admin screen has a generate tab along with the full timetable tab. This provides the admin with a button to schedule the system to generate an exam timetable based on all the courses and preferences and start and end dates of the examination period. This occurs on the back-end where the algorithm runs and then stores the timetable in the database.
 
 \subsection{Business Layer}
+
+The timetable is generated using a greedy graph colouring algorithm using the networkx python library and retrieved the data using sqlite queries. The data retrieved from the front-end is just the start and the end dates of the exam period.
+
 \subsection{Data Layer}
+
+The database was created using sqlite and the business layer connects to it using the python sqlite 3 python library. 
 
 \subsection{Dependencies}
 
