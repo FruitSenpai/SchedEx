@@ -58,20 +58,8 @@ class Timetable:
 		colours = self.getColours(venues, dates)
 			
 		g = graphColour
-		#table = g.colour(courses, edges)	
-		#instantiate dbInterface class
-		#create node array with all course objects pulled from db
-		#create edge array between courses weighted by the number of students that take both courses
-		#create venue array with all venue objects pulled from db
-		#create colour array with all date-venue combinations
-		#colour nodes with date-venue combos where the venue capacity >= the course size
-		#store course-venue-date combos in timetable table in db
-		#create google calendar events etc
 		
-		#each time node is coloured, instantiate a slot
-		#create an event with an attendees list of all the students who take that course
-		#insert the slot into the timetable table	
-		
+
 	def createGoogleEvent(self, students):
 		SCOPES = 'https://www.googleapis.com/auth/calendar'
 		CLIENT_SECRET_FILE = 'client_secret.json'
@@ -83,7 +71,7 @@ class Timetable:
 		
 		event = {
 		  'summary': 'COMS3002 - Software Engineering',
-		  'location': 'Flower Hell',
+		  'location': 'Flower Hall',
 		  'start': {
 			'dateTime': '2017-09-29T09:00:00-07:00',
 	#		'timeZone': 'SouthAfrica',
@@ -92,7 +80,7 @@ class Timetable:
 			'dateTime': '2017-09-29T12:00:00-07:00',
 	#		'timeZone': 'SouthAfrica',
 		  },
-		  #can pull list of students for each course from db and add them to attendees list
+
 		  'attendees': [
 			{'email': ''}
 		  ],
@@ -106,7 +94,7 @@ class Timetable:
 		}    
 
 
-		#event = service.events().insert(calendarId='primary', body=event).execute()	
+		event = service.events().insert(calendarId='primary', body=event).execute()	
 		
 	def getColours(self, venues, dates):
 		colours = []
@@ -114,22 +102,11 @@ class Timetable:
 			for date in dates:
 				c = Colour(ven, date)
 				colours.append(c)
-		'''		
-		for	c in colours:	
-			print (c.getVenue().getName())	
-			print (c.getDate())		
-			'''
+
 		return colours	
 		
 	def get_credentials(self):
-		"""Gets valid user credentials from storage.
 
-		If nothing has been stored, or if the stored credentials are invalid,
-		the OAuth2 flow is completed to obtain the new credentials.
-
-		Returns:
-		    Credentials, the obtained credential.
-		"""
 		home_dir = os.path.expanduser('~')
 		credential_dir = os.path.join(home_dir, '.credentials')
 		if not os.path.exists(credential_dir):
@@ -147,18 +124,7 @@ class Timetable:
 		    else: # Needed only for compatibility with Python 2.6
 		        credentials = tools.run(flow, store)
 		    print('Storing credentials to ' + credential_path)
-		return credentials			
-		
-			
-		#check for weekends using a calendar library or something
-		#and fill an array with all the possible dates for exams
-		#then pull the courses and venues from the db and do graph 
-		#colouring on them
-		#create array and append each date to it if it's not a 
-		#weekend
-		
-	#receive start and end dates from admin	
-	
+		return credentials				
 		
 if __name__ == "__main__":		
 	main()		
