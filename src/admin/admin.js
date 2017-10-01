@@ -14,6 +14,13 @@ $(function() {
         window.location.replace("../home/home.html");
     });
 
+    // Set enter key to activate the login button
+    $(document).keypress(function(e) {
+        if (e.which === 13){
+            $("#button").click();
+        }
+    });
+
     // Snackbar appearance on button click
     (function() {
         var snackbarContainer = document.querySelector('#snackbar');
