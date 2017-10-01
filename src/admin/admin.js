@@ -11,7 +11,7 @@ $(function() {
 
     // Logout functionality
     $("#logout").click(function() {
-        window.location.replace("../home/home.html");
+        window.location.replace("../login/login.html");
     });
 
     // Set enter key to activate the login button
