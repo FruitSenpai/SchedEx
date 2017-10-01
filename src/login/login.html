@@ -19,7 +19,7 @@
     <script src="login.js"></script>
 </head>
 
-<body>
+<body onkeypress="keypress()">
 
 <!-- Header -->
 <div class="header_cont demo-card-image mdl-card mdl-shadow--2dp">
@@ -53,6 +53,11 @@
         <i class="material-icons">arrow_forward</i>
     </button>
 
+</div>
+
+<div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
 </div>
 
 <a href="https://github.com/FruitSenpai/SchedEx">
